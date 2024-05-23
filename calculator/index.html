@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CALCULATOR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-height, initial-scale=1.0">
+    <link rel="website icon" type="jpg" href="C:\Users\avnee\Desktop\calculator\calculatorsign.jpg">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script>
+            let calculatorStarted = false; // Flag to indicate if calculator has started
+        
+            document.addEventListener('DOMContentLoaded', function () {
+                const display = document.getElementById('display');
+                let currentInput = '';
+        
+                function clearDisplay() {
+                    display.textContent = '0';
+                    currentInput = '';
+                }
+        
+                function startCalculator() {
+                    calculatorStarted = true;
+                    clearDisplay();
+                }
+        
+                function appendNumber(num) {
+                    if (calculatorStarted && currentInput === '0' && num === '0') return;
+                    if (calculatorStarted && currentInput === '0') currentInput = '';
+                    // Limit the input to 9 characters
+                    if (calculatorStarted && currentInput.length < 9) {
+                        currentInput += num;
+                    }
+                    display.textContent = currentInput;
+                }
+        
+                function appendDecimal() {
+                    if (calculatorStarted && !currentInput.includes('.') && currentInput.length < 11) {
+                        currentInput += '.';
+                        display.textContent = currentInput;
+                    }
+                }
+        
+                function calculate() {
+                    try {
+                        if (calculatorStarted) {
+                            currentInput = eval(currentInput).toString();
+                            display.textContent = currentInput;
+                        }
+                    } catch (error) {
+                        display.textContent = 'Error';
+                    }
+                }
+        
+                function handleButtonClick(event) {
+                    const buttonValue = event.target.textContent;
+        
+                    if (!calculatorStarted && buttonValue !== 'C') {
+                        alert("Turn on calculator by pressing 'C' button.");
+                        return;
+                    }
+        
+                    switch (buttonValue) {
+                        case 'C':
+                            startCalculator();
+                            break;
+                        case '=':
+                            calculate();
+                            break;
+                        case '.':
+                            appendDecimal();
+                            break;
+                        case 'x':
+                            if (calculatorStarted) {
+                                currentInput += '*';
+                                display.textContent = currentInput;
+                            }
+                            break;
+                        case '()':
+                            if (calculatorStarted) {
+                                if (currentInput.endsWith('(')) {
+                                    currentInput += ')';
+                                } else {
+                                    currentInput += '(';
+                                }
+                                display.textContent = currentInput;
+                            }
+                            break;
+                        case '%':
+                            if (calculatorStarted) {
+                                currentInput += '/100';
+                                display.textContent = currentInput;
+                            }
+                            break;
+                        case 'off':
+                            if (calculatorStarted) {
+                                display.textContent = '';
+                                calculatorStarted = false;
+                            }
+                            break;
+                        case '←': // Backspace button
+                            if (calculatorStarted) {
+                                currentInput = currentInput.slice(0, -1);
+                                display.textContent = currentInput;
+                            }
+                            break;
+                        default:
+                            appendNumber(buttonValue);
+                    }
+                }
+        
+                const buttons = document.querySelectorAll('.numbers button');
+                buttons.forEach(button => {
+                    button.addEventListener('click', handleButtonClick);
+                });
+            });
+        </script>
+        
+        
+        
+        
+        
+        
+        
+    <style>
+body{
+    height: 100%;
+    width: 100%;
+}
+        .outer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:  #CCCCFF;
+            height: 100vh;
+            width: 100%;
+            padding-top: 10px;
+            /* background-image: linear-gradient(140deg, #EADEDB 0%, #BC70A4 50%, #BFD641 75%); */
+        }
+
+        .inner {
+            background-color: rgba(0, 0, 0, 0.297);
+            border: black solid;
+            border-radius: 25px;
+            height: 620px;
+            width: 500px;
+            display: grid;
+            justify-content: center;
+            padding-top: 50px;
+            padding-bottom: 20px;
+            padding-left: 5px;
+            padding-right: 5px;
+            box-shadow: 10px 10px 15px .1px black;
+        }
+
+        placeholder {
+            background-color: rgb(161, 229, 59);
+            border: black solid;
+            border-width: 3px;
+            border-radius: 25px;
+            display: flex;
+            height: 100px;
+            width: 450px;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: right;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;;
+            box-shadow: 10px 10px 15px .1px black;
+            font-size: 65px;
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+
+        .display {
+            text-align: right;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;;
+
+        }
+
+        .numbers {
+            padding: 6px 0%;
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 24px;
+        }
+
+        button {
+            border-radius: 15px;
+            padding: 15px 25px;
+            border-width: 3px;
+            box-shadow: 10px 10px 15px .1px rgb(0, 0, 0);
+            font-weight: bolder;
+        }
+
+        button:hover {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+
+<body><b>
+        <div class="outer">
+            <div class="inner">
+                <placeholder>
+                    <div id="display"></div>
+                </placeholder>
+                &nbsp;&nbsp;&nbsp;
+                <div class="down">
+                    <table>
+                        <tr>
+                            <th>
+
+                                <div class="numbers">
+                                    <div class="buttons">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<button>C</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button>/</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button>+</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button>x</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <!-- <div class="operator">
+                            <button>=</button></div> -->
+                                    </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class="numbers">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<button>7</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button>8</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button>9</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button>&nbsp;-</button>
+                                    <!-- <div class="operator">
+                            <button>=</button></div> -->
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class="numbers">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<button>4</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button>5</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button>6</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button>&larr;</button>
+                                    <!-- <div class="operator">
+                            <button>x</button><button>/</button></div> -->
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class="numbers">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<button>3</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button>2</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button>1</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button>%</button>
+                                    <!-- <div class="operator">
+                            <button>+</button><button>-</button></div> -->
+                                </div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <div class="numbers">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<button>0</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button>.</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button>=</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button>off</button>
+                                    <!-- <div class="operator">
+                            <button>+</button><button>-</button></div> -->
+                                </div>
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
