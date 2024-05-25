@@ -1,0 +1,239 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #005f73;
+    color: white;
+    padding: 5px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    font-weight: bolder;
+}
+
+.logo {
+    height: 60px;
+    width: 60px;
+    font-size: 1.5em;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.nav-links a:hover {
+    background-color: #0a9396;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('aeroplane1.png');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 160px 10px;
+    font-weight: bolder;
+    color: rgb(35, 193, 246);
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 2.5em;
+    /* margin-bottom: 0px; */
+}
+
+.cta-button {
+    background-color: #005f73;
+    color: white;
+    padding: 20px 30px;
+    font-weight: bolder;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #0a9396;
+}
+
+/* About Section */
+.about {
+    background-color: #E6E6FA;
+    text-align: center;
+    padding: 0px 0;
+    font-weight: bolder;
+    color: darkblue;
+}
+
+.about h2 {
+    margin-bottom: 20px;
+    font-size: 3rem;
+    text-decoration: red underline;
+    text-decoration-thickness: 7px;
+    font-weight: bolder;
+}
+
+/* Destinations Section */
+.destinations {
+    background-color: #E6E6FA;
+    text-align: center;
+    padding: 0 0;
+}
+
+.destinations h2 {
+    margin-bottom: 20px;
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+.destination-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.destination-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 10px;
+    border: red solid ;
+    border-radius: 10px;
+    width: 40%;
+    box-sizing: border-box;
+    background:#9FE2BF ;
+    box-shadow: red 0.25;
+}
+
+.destination-card h3 {
+    margin-top: 0;
+}
+
+.dest_head{
+    color: darkblue;
+    font-weight: bolder;
+    text-decoration: red underline;
+    font-size: 3rem;
+}
+#newyorkback{
+    background:pink;
+    color: darkblue;
+    font-weight: bolder;
+}
+
+#parisback{
+    background: #9FE2BF;
+    color: darkblue;
+    font-weight: bolder;
+}
+
+#tokyoback{
+    background: lightskyblue;
+    color: darkblue;
+    font-weight: bolder;
+}
+
+/* Contact Section */
+.contact {
+    background-color:#E6E6FA;
+    text-align: center;
+    padding: 50px 0;
+    color: darkblue;
+    font-weight: bolder;
+}
+
+.contact h2{
+    font-size: 3rem;
+    color: darkblue;
+    font-weight: bolder;
+    text-decoration: red underline;
+    text-decoration-thickness: 7px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #005f73;
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+}
+.footer_image{
+    height: 50px ;
+    width: 56px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+    }
+
+    .feature-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+    }
+
+    .hero p {
+        font-size: 3em;
+    }
+
+    .cta-button {
+        padding: 8px 16px;
+    }
+
+    .feature-card {
+        width: 100%;
+    }
+}
