@@ -1,0 +1,442 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #ccccfa;
+}
+
+#container {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+#section1, #section2, #section3 {
+    margin-bottom: 40px;
+}
+
+#section2, #section3 {
+    background-color: #ccccfa;
+    border-top: #ed1d61 solid;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding-right: 20px;
+    padding-left: 10px;
+}
+
+.left_inner {
+    color: darkblue;
+}
+
+.mid {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    color: darkblue;
+    font-size: 50px;
+    font-weight: bolder;
+    text-decoration: underline red;
+    text-decoration-thickness: 6px;
+}
+
+nav {
+    background-color: darkblue;
+    border-radius: 100px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+    font-weight: bolder;
+    text-decoration: white underline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.left {
+    font-size: 25px;
+    width: 420px;
+    font-weight: bold;
+    background-color: #FFBF00;
+    border-radius: 0 0 100px 100px;
+    border: red solid;
+    border-top: none;
+    border-width: 5px;
+}
+
+h1 {
+    color: red;
+    text-align: center;
+    text-decoration: underline solid red;
+    text-decoration-thickness: 7px;
+}
+
+h1 span {
+    color: darkblue;
+}
+
+h1 span::before {
+    content: "";
+    right: -8px;
+    top: 50%;
+    position: left;
+    height: 45px;
+    width: 2px;
+    background: darkblue;
+    transform: translateY(-50%);
+}
+
+hr {
+    height: 3px;
+    color: #ed1d61;
+    background: #ed1d61;
+    font-size: 0;
+    border: 0;
+    margin: 20px 0;
+}
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#leftbox,
+#rightbox,
+#leftbox2,
+#rightbox2 { 
+    flex: 2;
+    min-width: 300px;
+    box-sizing: border-box;
+}
+
+#leftbox {
+    padding-left: 80px;
+    padding-right: 5px;
+    padding-top: 30px;
+}
+
+#rightbox {
+    padding-left: 0;
+    padding-right: 30px;
+}
+
+#leftbox2 {
+    padding-left: 80px;
+    padding-right: 5px;
+    width: 420px;
+}
+
+#rightbox2 {
+    padding-left: 0;
+    padding-right: 30px;
+}
+
+.skills {
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: left;
+    color: darkblue;
+    text-decoration: underline solid red;
+    text-decoration-thickness: 7px;
+    padding-left: 17%;
+}
+
+.projects {
+    font-size: 40px;
+    font-weight: bolder;
+    color: darkblue;
+}
+
+table {
+    width: 75%;
+}
+
+table th {
+    text-align: left;
+    padding-left: 90px;
+}
+
+table img {
+    max-height: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+#rightbox2_table {
+    padding-left: 115px;
+    border-radius: 50px;
+}
+
+#rightbox2_table th {
+    border: none;
+    padding-left: 20px;
+    border-radius: 50px;
+}
+
+.dynamic h1 {
+    text-align: left;
+    font-size: 35px;
+    padding-left: 50px;
+}
+
+.right img {
+    max-width: 100%;
+    height: auto;
+    border: red solid 5px;
+    border-radius: 20%;
+    box-shadow: 3px 3px 6px royalblue;
+}
+
+.about {
+    text-align: center;
+    color: red;
+}
+
+.about_heading {
+    font-size: 50px;
+    font-weight: bolder;
+    text-decoration: dotted;
+}
+
+.about_content {
+    font-size: 20px;
+    font-weight: bold;
+    color: darkblue;
+}
+
+.mysql, .cpp, .python, .java, .php, .c {
+    height: 130px;
+    width: 130px;
+    border: none;
+    box-shadow: 3px 3px 6px #ed1d61;
+    border-radius: 50%;
+}
+
+.calculator, .djangoproject, .portfolio, .landingpage {
+    height: 180px;
+    width: 300px;
+    border-radius: 20%;
+    border: #ed1d61 solid;
+    box-shadow:2px 2px 4px #ed1d61;
+}
+
+
+.project_table_text{
+    color: darkblue;
+}
+
+#content.resume {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    color: darkblue;
+    font-size: 50px;
+    font-weight: bolder;
+    text-decoration: underline red;
+    text-decoration-thickness: 6px;
+}
+
+.btn {
+    background-color: #FFBF00;
+    border: none;
+    color: darkblue;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
+    border: #ed1d61 solid;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: darkblue;
+    
+}
+
+footer {
+    background-color: darkblue;
+    color: white;
+    padding: 5px 0;
+    text-align: center;
+    border-top: 1px solid #e7e7e7;
+    margin-top: 20px;
+    font-weight: bolder;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-container p {
+    margin: 5px 0;
+}
+
+.social-media a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+    font-weight: bolder;
+}
+
+.social-media a:hover {
+    text-decoration: underline;
+}
+
+.footer_image{
+    height: 50px ;
+    width: 56px;
+}
+/* Media Queries */
+
+@media (max-width: 770px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left, nav {
+        width: 100%;
+        padding: 15px 0;
+        text-align: center;
+    }
+    
+    .mid{
+        padding-top: 15px;
+        padding-bottom: 20px;
+    }
+    
+    .firstheader{
+        width: 106%;
+    }
+
+    .skills{
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    #content {
+        flex-direction: column;
+    }
+
+    #leftbox, #rightbox, #leftbox2, #rightbox2 {
+        padding: 20px;
+    }
+
+    .skills, .projects {
+        text-align: center;
+    }
+
+    .skills, .about_heading {
+        font-size: 30px;
+    }
+
+    .skills{
+        padding-left: 50px;
+        text-align: center;
+    }
+
+    .dynamic h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .about_content {
+        font-size: 18px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .mid {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .left {
+        font-size: 20px;
+        width: 100%;
+    }
+
+    .dynamic h1 {
+        font-size: 30px;
+    }
+    
+
+    .skills, .about_heading, .projects {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .skills{
+        padding-left: 0px;
+        text-align: center;
+    }
+
+    .about_content {
+        font-size: 18px;
+        padding-left: 0;
+        margin: 0 ;
+    }
+
+    .resume{
+        font-size: 16px;
+        padding-left: 0;
+        margin: 25px ;
+
+    }
+
+    table th {
+        padding-left: 20px;
+        
+    }
+
+    #rightbox2_table {
+        padding-left: 0;
+        margin: 25px ;
+        
+    }
+
+    .skillstable{
+        padding-left: 0;
+        margin: 25px ;
+    }
+
+    .calculator, .djangoproject, .portfolio, .landingpage {
+        height: 170px;
+        width: 200px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
